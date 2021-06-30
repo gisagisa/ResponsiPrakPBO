@@ -17,12 +17,9 @@ public class ControllerLihatKaryawan {
        return new ViewLihatKaryawan(emps);
     }
     public void viewLemburKaryawan(ViewLihatKaryawan list, Karyawan karyawan) {
-        list.toBack();
         ModelKaryawan mk= new ModelKaryawan();
         Karyawan emp = mk.getOne(karyawan.getId());
         System.out.println(emp);
-        ViewLemburKaryawan baru = new ViewLemburKaryawan(emp);
-        baru.toFront();
-        //return new ViewLemburKaryawan(emp);
+        ViewLemburKaryawan lembur = new ViewLemburKaryawan(emp);
     }
 }

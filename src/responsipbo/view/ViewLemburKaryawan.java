@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import responsipbo.controller.ControllerLemburKaryawan;
 import responsipbo.model.Karyawan;
 
 /**
@@ -15,6 +16,8 @@ import responsipbo.model.Karyawan;
  * @author user
  */
 public class ViewLemburKaryawan extends WrapperDetail implements ActionListener{
+    
+    ControllerLemburKaryawan controllerLemburKaryawan = new ControllerLemburKaryawan();
     
     JLabel llembur = new JLabel("Lembur(jam) :");
     
@@ -32,9 +35,9 @@ public class ViewLemburKaryawan extends WrapperDetail implements ActionListener{
         
         setTitle("");
         
-        super.lValuename.setText(karyawan.getName());
-        super.lValueage.setText(karyawan.getName());
-        super.lValuesalary.setText(karyawan.getName());
+        lValuename.setText(karyawan.getName());
+        lValueage.setText(String.valueOf(karyawan.getAge()));
+        lValuesalary.setText(String.format("%,.2f", karyawan.getSalary()));
         
         super.add(llembur);
         
@@ -76,8 +79,17 @@ public class ViewLemburKaryawan extends WrapperDetail implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btotal) {
+            //controllerLemburKaryawan.viewDetailKaryawan(this, karyawan, total);
+        }
         if (e.getSource() == bback) {
             this.dispose();
+        }
+        if (e.getSource() == bedit) {
+            controllerLemburKaryawan.edit(this, karyawan);
+        }
+        if (e.getSource() == bdelete) {
+            controllerLemburKaryawan.delete(this, karyawan.getId());
         }
     }
     

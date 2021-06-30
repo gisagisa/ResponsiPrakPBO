@@ -72,5 +72,20 @@ public class ModelKaryawan {
         }
     return message;
     }
+     
+        public String delete(int id) {
+        String message = "Bad Request";
+        try {
+            String query = "DELETE FROM karyawan WHERE id = '" + id + "'";
+            connector.statement = connector.koneksi.createStatement();
+            connector.statement.executeUpdate(query);
+            message = "Queri Berhasil";
+            connector.statement.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("SQL Error");
+        }
+        return message;
+    }
 
 }

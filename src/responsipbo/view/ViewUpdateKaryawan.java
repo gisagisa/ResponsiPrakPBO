@@ -3,6 +3,7 @@ package responsipbo.view;
 //import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionEvent;
+import responsipbo.model.Karyawan;
 
 //import projectprak.controller.ControllerCheckin;
 
@@ -11,9 +12,14 @@ import java.awt.event.ActionEvent;
  * @author user
  */
 public class ViewUpdateKaryawan extends WrapperKaryawan {
+    Karyawan update;
     //ControllerCheckin controllerCheckin = new ControllerCheckin();
-    public ViewUpdateKaryawan() {
+    public ViewUpdateKaryawan(Karyawan karyawan) {
         super("", "Update Karyawan");
+        this.update=karyawan;
+//        super.getFnama().setText(karyawan.getNama());
+//        super.getFusia().setText(String.valueOf(karyawan.getUsia()));
+//        super.getFgaji().setText(String.format("%,.2f", karyawan.getGaji()));
     }
 
     public void actionPerformed(ActionEvent e) {

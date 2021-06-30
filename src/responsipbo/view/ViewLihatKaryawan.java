@@ -1,10 +1,8 @@
 package responsipbo.view;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.ListSelectionModel;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -63,11 +61,6 @@ public class ViewLihatKaryawan extends JFrame implements MouseListener, ActionLi
                
             }   
         }
-        
-        tabel.setSelectionBackground(Color.gray);
-        tabel.setSelectionForeground(Color.white);
-        tabel.setRowSelectionAllowed(true);
-        tabel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
         tabel.setFont(new Font("Century Gothic",Font.PLAIN,14));
         
